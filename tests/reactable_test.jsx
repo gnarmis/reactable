@@ -1,5 +1,6 @@
 var ReactTestUtils = React.addons.TestUtils;
 var expect = chai.expect;
+import createReactClass from 'create-react-class';
 
 var ReactableTestUtils = {
     resetTestEnvironment:  function() {
@@ -1139,7 +1140,7 @@ describe('Reactable', function() {
         describe('updating the currentPage via a prop passed to the table', function() {
             before(function() {
 
-              var ParentComponent = React.createClass({
+              var ParentComponent = createReactClass({
                 getInitialState: function() {
                   return {currentPage: 4}
                 },
@@ -1443,7 +1444,7 @@ describe('Reactable', function() {
             let parent;
 
             before(function () {
-                var TestParent = React.createFactory(React.createClass({
+                var TestParent = React.createFactory(createReactClass({
                     getInitialState: function() {
                         return ({
                             data: [
@@ -2103,7 +2104,7 @@ describe('Reactable', function() {
                 before(function() {
                   ReactableTestUtils.resetTestEnvironment();
 
-                  var ParentComponent = React.createClass({
+                  var ParentComponent = createReactClass({
                     getInitialState: function() {
                       return {customFilterText: 'new'}
                     },
@@ -2345,7 +2346,7 @@ describe('Reactable', function() {
                 before(function() {
                   ReactableTestUtils.resetTestEnvironment();
 
-                  var ParentComponent = React.createClass({
+                  var ParentComponent = createReactClass({
                     getInitialState: function() {
                       return {customFilterText: 'l'}
                     },
@@ -2662,7 +2663,7 @@ describe('Reactable', function() {
 
         before(function () {
             //create a wrapper component so we can update its state and trigger componentWillReceiveProps in the table
-            var TestParent = React.createFactory(React.createClass({
+            var TestParent = React.createFactory(createReactClass({
                 render() {
                     return (<Reactable.Table className="table" id="table" ref="table">
                         <Reactable.Tr>

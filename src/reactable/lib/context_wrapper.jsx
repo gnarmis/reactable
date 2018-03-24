@@ -1,7 +1,8 @@
 import React from 'react';
+import createReactClass from 'create-react-class';
 
 export function contextWrapper(context, contextTypes, child) {
-    let ContextWrapper = React.createClass({
+    let ContextWrapper = createReactClass({
         displayName: 'ContextWrapper',
         childContextTypes: contextTypes,
         getChildContext() { console.log(context); return context; },
